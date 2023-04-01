@@ -1,7 +1,6 @@
 package com.David.SpringRecipes.services;
 
 import com.David.SpringRecipes.models.Exercise;
-import com.David.SpringRecipes.models.Recipe;
 
 import java.util.ArrayList;
 import java.util.Collection;
