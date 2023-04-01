@@ -41,7 +41,7 @@
             })
     ).then(responses => {
       console.log(exercises); // print the exercises array with the responses
-      return exercises;
+      return exercises.flat();
     }).catch(err => console.error(err));
   }
 

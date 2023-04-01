@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Exercises</title>
+    <title>Select Exercises</title>
 </head>
 <body>
-<script th:inline="javascript">
-    const exercises = JSON.parse(localStorage.getItem('exercises'));
+<form id="exercise-form" method="post">
+    <fieldset>
+        <legend>Select exercises:</legend>
+        <div id="checkbox-container"></div>
+    </fieldset>
+    <button id="add-button">Add Selected Exercises</button>
+</form>
+
+<script>
+    const exercises = JSON.parse(localStorage.getItem('exercises')).slice(0,6);
     console.log(exercises);
+
+    const checkboxContainer = document.getElementById('checkbox-container');
+    exercises.forEach(exercise => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = exercise.id;
+        checkbox.name = 'exercise';
+        checkbox.value = JSON.stringify(exercise);
+
+        const label = document.createElement('label');
+        label.for = exercise.id;
+        label.textContent = exercise.name;
+
+        checkboxContainer.appendChild(checkbox);
+        checkboxContainer.appendChild(label);
+        checkboxContainer.appendChild(document.createElement('br'));
+    });
 </script>
 </body>
 </html>
