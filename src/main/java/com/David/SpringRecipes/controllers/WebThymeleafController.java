@@ -58,7 +58,7 @@ public class WebThymeleafController {
     }
     @GetMapping("/add-workout")
     public String addWorkout(Model model){
-        Collection<Exercise> exercises = ExerciseService.getAll();
+        Collection<Exercise> exercises = exerciseService.getAll();
         model.addAttribute("exercises", exercises);
         return "add-exercise";
     }
