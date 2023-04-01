@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class ExerciseService {
@@ -23,5 +24,9 @@ public class ExerciseService {
         return values;
     }
 
-    
+
+    public void createWorkout(ArrayList<Exercise> exercises) {
+        exercises.stream().map(exercise -> db.put(exercise.getName(), exercise))
+                .collect(Collectors.toList());
+    }
 }

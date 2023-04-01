@@ -32,6 +32,25 @@
         checkboxContainer.appendChild(checkbox);
         checkboxContainer.appendChild(label);
         checkboxContainer.appendChild(document.createElement('br'));
+
+        var selectedExercises = [];
+        $('input[name="exercise"]:checked').each(function() {
+            selectedExercises.push(JSON.parse($(this).val()));
+        });
+
+        // Send selected exercises to backend
+        $.ajax({
+            type: 'POST',
+            url: '/add-selected-exercises',
+            data: JSON.stringify(selectedExercises),
+            contentType: 'application/json',
+            success: function(response) {
+                console.log('Selected exercises added successfully!');
+            },
+            error: function(error) {
+                console.error('Error adding selected exercises:', error);
+            }
+        });
     });
 </script>
 </body>

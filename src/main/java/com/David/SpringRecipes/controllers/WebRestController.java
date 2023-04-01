@@ -1,10 +1,18 @@
 package com.David.SpringRecipes.controllers;
 
 import com.David.SpringRecipes.models.Exercise;
+import com.David.SpringRecipes.services.ExerciseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @RestController
 public class WebRestController {
+    private final ExerciseService exerciseService;
+    public WebRestController(@Autowired ExerciseService exerciseService) {
+        this.exerciseService = exerciseService;
+    }
 
 //    @DeleteMapping("/delete/{name}")
 //    public void delete(@PathVariable String name){
@@ -14,8 +22,9 @@ public class WebRestController {
 //        }
 //    }
 
-    @PostMapping(value = "/add-exercise")
-    public Exercise addExercise(@RequestBody Exercise exercise){
-        return exercise;
+    @PostMapping(value = "/add-selected-exercises")
+    public ArrayList<Exercise> addExercises(@RequestBody ArrayList<Exercise> exercises){
+        exerciseService.createWorkout(exercises);
+        return exercises;
     }
 }
