@@ -1,5 +1,6 @@
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body{
@@ -222,7 +223,7 @@ h2{
   height: 10%;
   width: 12%;
   box-shadow: none;
-  color: tomato;
+  color: #555555;
   font-size: 40px;
   border: none;
   overflow: hidden;
@@ -238,6 +239,113 @@ h2{
 /*  left: 20%;*/
 /*  top: 30%;*/
 /*}*/
+
+.weeklyCheck{
+  position: relative;
+  top: -60%;
+  left: 10%;
+  width: 5%;
+  height: 5%;
+}
+
+.containerA {
+  opacity: 0;
+  display: inline;
+  top: -30%;
+  left: 10%;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: opacity 1s ease;
+}
+
+/* Hide the browser's default checkbox */
+.containerA input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmarkA {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  background-color: #eee;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* On mouse-over, add a grey background color */
+.containerA:hover input ~ .checkmarkA {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerA input:checked ~ .checkmarkA {
+  background-color: #222222;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmarkA:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.containerA input:checked ~ .checkmarkA:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerA .checkmarkA:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.workoutTitle{
+  /*padding-top: 1%;*/
+  padding-left: 2%;
+  box-sizing: border-box;
+  font-size: 10em;
+}
+
+.summaryList{
+  font-size: 1.5em;
+  position: absolute;
+  left: 40%;
+  top: 10%;
+}
+
+.imageMuscle{
+  height: 100%;
+  width: 30%;
+  position: absolute;
+  right: -10%;
+  top: 0;
+  background-image: url("/img/BicepImage.png");
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+  background-position: top -200px;
+}
 
 #taskBar a{
   text-align: center;

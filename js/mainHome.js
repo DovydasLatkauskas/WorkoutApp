@@ -8,13 +8,20 @@ let degChange = 120;
 let isHovering = false;
 let inputBox = document.getElementById("inputBox");
 let closeButton = document.getElementById("close")
+// let repsCount = document.getElementsByClassName("containerA")
 
 for( let workout of workOuts ){
   workout.addEventListener("mousemove", function(){
     workout.style.opacity = "100%"
-    workout.style.height = "14%"
+    workout.style.height = "17%"
     workout.style.width = "92%"
-    workout.style.left = "1%"
+    workout.style.left = "1%";
+    let repsCount = workout.getElementsByClassName("containerA")
+    for(let container of repsCount){
+      container.style.opacity = "1"
+      let box = container.getElementsByClassName("checkmarkA")
+      box[0].style.opacity = "1"
+    }
     //cursorStyling
     cursorDiv.style.height = "60px";
     cursorDiv.style.width = "60px";
@@ -27,6 +34,12 @@ for( let workout of workOuts ){
     workout.style.height = "12%"
     workout.style.width = "90%"
     workout.style.left = "2%"
+    let repsCount = workout.getElementsByClassName("containerA")
+    for(let container of repsCount){
+      container.style.opacity = "0"
+      let box = container.getElementsByClassName("checkmarkA")
+      box[0].style.opacity = "0"
+    }
     //cursorStyling
     cursorDiv.style.height = "40px";
     cursorDiv.style.width = "40px";
@@ -35,6 +48,7 @@ for( let workout of workOuts ){
     cursorDiv.style.mixBlendMode = "difference";
   })
 }
+
 
 let cursorDiv = document.getElementById("cursorBox");
 const move = (e) => setTimeout(function(){
