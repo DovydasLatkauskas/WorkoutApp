@@ -29,7 +29,7 @@ public class SpringRecipesApplication {
 
 
 
-		//SpringApplication.run(SpringRecipesApplication.class, args); // no args taken
+		SpringApplication.run(SpringRecipesApplication.class, args); // no args taken
 	}
 
 }
