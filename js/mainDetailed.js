@@ -2,8 +2,23 @@ document.addEventListener("DOMContentLoaded", function(){
   let rand = document.getElementById("dynamic-text-inner");
   let workOuts = document.getElementsByClassName("workOuts");
   const attributes = ["Lat Pull-Downs", "Hip Abductions", "Seated Leg Curls", "Chest Presses"]
+  let alpha = [2, 7, 12, 17]
   let index = 0;
   let wordInd = 0;
+
+  for(let i = 0; i < alpha.length; i++) {
+    workOuts[i].style.left = alpha[i]*window.innerWidth/100 + "px";
+  }
+
+  document.addEventListener("scroll", function(){
+    for(let i = 0; i < alpha.length; i++){
+      // if(alpha[i]*window.innerWidth/100 > 1 * window.innerWidth/100) {
+        workOuts[i].style.left = alpha[i] * window.innerWidth / 100 - window.scrollY*0.3 + "px"
+      //   alpha[i] = alpha[i] * window.innerWidth / 100 - window.scrollY + "px";
+      // }
+    }
+  })
+
 
   let cursorDiv = document.getElementById("cursorBox");
   const move = (e) => setTimeout(function(){
@@ -80,12 +95,16 @@ document.addEventListener("DOMContentLoaded", function(){
         let box = container.getElementsByClassName("checkmarkA")
         box[0].style.opacity = "1"
       }
+      let button = workout.getElementsByTagName("button");
+      button.addEventListener("click", function (){
+
+      })
       //cursorStyling
-      cursorDiv.style.height = "60px";
-      cursorDiv.style.width = "60px";
-      cursorDiv.style.backgroundColor= "rgba(255, 255, 255, 1)";
-      cursorDiv.style.mixBlendMode = "difference";
-      cursorDiv.style.border= "none";
+      // cursorDiv.style.height = "60px";
+      // cursorDiv.style.width = "60px";
+      // cursorDiv.style.backgroundColor= "rgba(255, 255, 255, 1)";
+      // cursorDiv.style.mixBlendMode = "difference";
+      // cursorDiv.style.border= "none";
     })
     workout.addEventListener("mouseout", function(){
       workout.style.opacity = "20%"
@@ -99,11 +118,11 @@ document.addEventListener("DOMContentLoaded", function(){
         box[0].style.opacity = "0"
       }
       //cursorStyling
-      cursorDiv.style.height = "40px";
-      cursorDiv.style.width = "40px";
-      cursorDiv.style.backgroundColor= "transparent";
-      cursorDiv.style.border= "2px solid white";
-      cursorDiv.style.mixBlendMode = "difference";
+      // cursorDiv.style.height = "40px";
+      // cursorDiv.style.width = "40px";
+      // cursorDiv.style.backgroundColor= "transparent";
+      // cursorDiv.style.border= "2px solid white";
+      // cursorDiv.style.mixBlendMode = "difference";
     })
   }
 })
