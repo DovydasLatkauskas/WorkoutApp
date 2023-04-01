@@ -51,15 +51,13 @@ public class WebThymeleafController {
         }
         return "redirect:/";
     }
-    @GetMapping("/add-exercise")
-    public String addExercise(Model model){
+    @GetMapping("/select-muscles")
+    public String selectMuscles(Model model){
         model.addAttribute("muscleGroups", MuscleGroups.getMuscleGroups());
-        return "add-exercise";
+        return "select-muscles";
     }
-    @GetMapping("/add-workout")
-    public String addWorkout(Model model){
-        Collection<Exercise> exercises = exerciseService.getAll();
-        model.addAttribute("exercises", exercises);
-        return "add-exercise";
+    @GetMapping("/add-exercises")
+    public String addExercises(Model model){
+        return "add-exercises";
     }
 }

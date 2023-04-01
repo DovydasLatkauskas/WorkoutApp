@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Exercises</title>
+</head>
+<body>
+<script th:inline="javascript">
+    const exercises = JSON.parse(localStorage.getItem('exercises'));
+    console.log(exercises);
+</script>
+</body>
+</html>

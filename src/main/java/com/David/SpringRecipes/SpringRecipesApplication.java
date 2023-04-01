@@ -11,5 +11,4 @@ public class SpringRecipesApplication {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		SpringApplication.run(SpringRecipesApplication.class, args); // no args taken
 	}
-
 }

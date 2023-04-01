@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link th:href="@{/styles/upload-styles.css}" rel="stylesheet" />
+  <title>Select Muscles</title>
+</head>
+<body>
+<form id="muscle-form" method="post">
+  <fieldset>
+    <legend>Select a muscle group:</legend>
+    <div th:each="muscleGroup : ${muscleGroups}">
+      <input type="checkbox" th:id="${muscleGroup}" th:name="muscleGroup" th:value="${muscleGroup}" />
+      <label th:for="${muscleGroup}" th:text="${muscleGroup}" />
+    </div>
+  </fieldset>
+  <button id="search-button">Search</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script th:inline="javascript">
+  function musclesToExercies(selectedMuscleGroups){
+    let exercises = [];
+
+    return Promise.all(
+            selectedMuscleGroups.map(el => {
+              let options = {
+                method: 'GET',
+                headers: {
+                  'X-RapidAPI-Key': '409b178621mshc057f3f20ab8eafp15bac6jsnc3bfc1a5a71e',
+                  'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+                }
+              };
+
+              return fetch(`https://exercisedb.p.rapidapi.com/exercises/target/${el}`, options)
+                      .then(response => response.json())
+                      .then(data => {
+                        exercises.push(data);
+                        return data;
+                      });
+            })
+    ).then(responses => {
+      console.log(exercises); // print the exercises array with the responses
+      return exercises;
+    }).catch(err => console.error(err));
+  }
+
+  $(function() {
+    $('#search-button').on('click', function(event) {
+      // Prevent default form submission behavior
+      event.preventDefault();
+
+      // Retrieve checked checkboxes and build list of selected muscle groups
+      var selectedMuscleGroups = [];
+      $('input[name="muscleGroup"]:checked').each(function() {
+        selectedMuscleGroups.push($(this).val());
+      });
+
+      musclesToExercies(selectedMuscleGroups)
+              .then(exercises => {
+                // Store exercises in localStorage
+                localStorage.setItem('exercises', JSON.stringify(exercises));
+
+                // Redirect to the next page
+                window.location.href = '/add-exercises';
+              })
+              .catch(err => console.error(err));
+    });
+  });
+</script>
+
+
+</body>
+</html>

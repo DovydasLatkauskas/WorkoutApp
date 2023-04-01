@@ -6,7 +6,7 @@ import java.util.Collection;
 
 public class MuscleGroups {
     public static Collection<String> getMuscleGroups(){
-        return new ArrayList<>(Arrays.asList(
+        return new ArrayList<String>(Arrays.asList(
                 "abductors",
                 "abs",
                 "adductors",
