@@ -334,7 +334,6 @@ h2{
   left: 40%;
   top: 10%;
 }
-
 .imageMuscle{
   height: 100%;
   width: 30%;
@@ -346,6 +345,7 @@ h2{
   background-repeat: no-repeat;
   background-position: top -200px;
 }
+
 
 #taskBar a{
   text-align: center;
