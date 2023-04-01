@@ -8,8 +8,34 @@
 </head>
 <body style="cursor: url(./img/cursor.cur), auto;">
 <div id="demo"><div id="cursorBox"></div></div>
-<div id = "taskBar"><a id = "HomeLink" href="index.html"><b>Title Here</b></a><a class = "taskbar" href="#Quali" id="addNew">Add New Workout</a><a class = "taskbar" href="#Hobbies">Popular Sets</a><a class = "taskbar" href="indexAlpha.html" target="_blank">Contact Us</a>
+<div id = "taskBar"><a id = "HomeLink" href="index.html"><b>Title Here</b></a><a class = "taskbar" href="#Quali" id="addNew" onclick="openBox()">Add New Workout</a><a class = "taskbar" href="#Hobbies">Popular Sets</a><a class = "taskbar" href="indexAlpha.html" target="_blank">Contact Us</a>
 <span id="dynamic-text-outer">We recommend  <b><span id="dynamic-text-inner"></span></b>.</span>
+</div>
+<div id="inputBox">
+  <form id="inputForm">
+    <h2 id="formHeading">Select Preferred Muscle Group: </h2>
+    <label class="container">Option One
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <br>
+    <label class="container">Option Two
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <br>
+    <label class="container">Option Three
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <br>
+    <label class="container">Option Four
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <button id="submit"><b>Search </b></button>
+    <button id="close" onclick="closeBox()" onmousemove="closeHover()"><b> X </b></button>
+  </form>
 </div>
 <div class="workOutPreset">
   <div class="workOuts">

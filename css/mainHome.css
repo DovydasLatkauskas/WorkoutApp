@@ -110,6 +110,135 @@ h2{
   background-color: cadetblue;
 }
 
+#formHeading{
+  font-size: 300%;
+  color: #cccccc;
+}
+
+.container{
+  font-size: 2em;
+}
+
+#submit{
+  color: darkslategray;
+  position: relative;
+  top: 40px;
+  left: 10%;
+  width: 15em;
+  height: 50px;
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  border: none;
+  font-size: 24px;
+  border-radius: 10px;
+  box-shadow: 0 10px rgba(80,80,80,1);
+}
+
+.container {
+  color: #cccccc;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #555555;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+#inputBox{
+  z-index: 50;
+  display: none;
+  background-color: #222222;
+  height: 70%;
+  width: 30%;
+  position: absolute;
+  box-shadow: 0 0 200px rgba(0, 0,0,0.3);
+  border-radius: 40px;
+  padding: 30px;
+  box-sizing: border-box;
+  left: 35%;
+  top: 20%;
+  transition: display 1s ease;
+}
+
+#close{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  /*background-color: #222222;*/
+  background-color: #222222;
+  border-radius: 50%;
+  height: 10%;
+  width: 12%;
+  box-shadow: none;
+  color: tomato;
+  font-size: 40px;
+  border: none;
+  overflow: hidden;
+  text-shadow: 0 0 30px rgba(0, 0,0,1);
+  transition: background-color 1s ease;
+}
+/*#inputForm{*/
+/*  display: block;*/
+/*  background-color: #cccccc;*/
+/*  height: 20%;*/
+/*  width: 20%;*/
+/*  position: absolute;*/
+/*  left: 20%;*/
+/*  top: 30%;*/
+/*}*/
+
 #taskBar a{
   text-align: center;
   font-size: 24px;

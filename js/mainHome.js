@@ -3,6 +3,11 @@ const attributes = ["Lat Pull-Downs", "Hip Abductions", "Seated Leg Curls", "Che
 let index = 0;
 let wordInd = 0;
 let workOuts = document.getElementsByClassName("workOuts");
+let submitButton = document.getElementById("submit");
+let degChange = 120;
+let isHovering = false;
+let inputBox = document.getElementById("inputBox");
+let closeButton = document.getElementById("close")
 
 for( let workout of workOuts ){
   workout.addEventListener("mousemove", function(){
@@ -56,6 +61,40 @@ function printLetters(attribute){
   }
 }
 
+function closeHover(){
+  closeButton.style.backgroundColor = "#cccccc"
+}
+closeButton.addEventListener("mouseout", function(){
+  closeButton.style.backgroundColor = "#222222"
+})
+
+submitButton.addEventListener("mousemove", function(e) {
+  submitButton.style.top = 50 + "px";
+  submitButton.style.boxShadow = "none";
+  if (!isHovering) {
+    isHovering = true;
+    buttonAnimation();
+  }
+});
+
+const buttonAnimation = () => {
+  if (isHovering) {
+    submitButton.style.backgroundImage = "linear-gradient(" + degChange + "deg, #e0c3fc 0%, #8ec5fc 100%)";
+    degChange += 5;
+    if(degChange >= 360) {
+      degChange = 0;
+    }
+    setTimeout(buttonAnimation, 20);
+  }
+};
+submitButton.addEventListener("mouseout", function(e) {
+  isHovering = false;
+  submitButton.style.top = 40 + "px";
+  submitButton.style.boxShadow = "0px 10px rgba(80,80,80,1)";
+
+  submitButton.style.backgroundImage = submitButton.style.backgroundImage = "linear-gradient(" + degChange + "deg, #e0c3fc 0%, #8ec5fc 100%)";
+});
+
 let links = document.getElementsByTagName("a");
 for(let link of links){
   link.addEventListener("mousemove", function(){
@@ -74,6 +113,14 @@ for(let link of links){
   })
 }
 
+function openBox(){
+  inputBox.style.display = "block";
+}
+
+function closeBox(){
+  inputBox.style.display = "none";
+}
+
 function clearLetters(){
   if (index === -1) {
     wordInd = (wordInd + 1) % attributes.length;
@@ -90,5 +137,7 @@ function clearLetters(){
     setTimeout(clearLetters, 100);
   }
 }
+
+
 printLetters(attributes[wordInd])
 
