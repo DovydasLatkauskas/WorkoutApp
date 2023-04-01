@@ -1,7 +1,9 @@
 package com.David.SpringRecipes.controllers;
 
+import com.David.SpringRecipes.models.Exercise;
 import com.David.SpringRecipes.models.Recipe;
 import com.David.SpringRecipes.repositories.MuscleGroups;
+import com.David.SpringRecipes.services.ExerciseService;
 import com.David.SpringRecipes.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,9 +17,11 @@ import java.util.*;
 @Controller
 public class WebThymeleafController {
     private final RecipeService recipeService;
+    private final ExerciseService exerciseService;
 
-    public WebThymeleafController(@Autowired RecipeService recipeService) {
+    public WebThymeleafController(@Autowired RecipeService recipeService, ExerciseService exerciseService) {
         this.recipeService = recipeService;
+        this.exerciseService = exerciseService;
     }
 
     @GetMapping("/{name}")
@@ -50,6 +54,12 @@ public class WebThymeleafController {
     @GetMapping("/add-exercise")
     public String addExercise(Model model){
         model.addAttribute("muscleGroups", MuscleGroups.getMuscleGroups());
+        return "add-exercise";
+    }
+    @GetMapping("/add-workout")
+    public String addWorkout(Model model){
+        Collection<Exercise> exercises = ExerciseService.getAll();
+        model.addAttribute("exercises", exercises);
         return "add-exercise";
     }
 }

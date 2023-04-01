@@ -6,7 +6,7 @@ public class Exercise {
     private String equipment;
     private String gifUrl;
 
-    public void Exercise(String name, String targetMuscles, String equipment, String gifUrl) {
+    public Exercise(String name, String targetMuscles, String equipment, String gifUrl) {
         this.name = name;
         this.targetMuscles = targetMuscles;
         this.equipment = equipment;

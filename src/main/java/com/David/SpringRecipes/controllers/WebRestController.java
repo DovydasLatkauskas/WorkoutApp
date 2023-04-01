@@ -1,5 +1,6 @@
 package com.David.SpringRecipes.controllers;
 
+import com.David.SpringRecipes.models.Exercise;
 import com.David.SpringRecipes.models.Recipe;
 import com.David.SpringRecipes.services.RecipeService;
 import jakarta.validation.Valid;
@@ -32,5 +33,10 @@ public class WebRestController {
     public Recipe create(@RequestBody @Valid Recipe recipe){
         recipeService.create(recipe);
         return recipe;
+    }
+
+    @PostMapping(value = "/add-exercise")
+    public Exercise addExercise(@RequestBody Exercise exercise){
+        return exercise;
     }
 }
