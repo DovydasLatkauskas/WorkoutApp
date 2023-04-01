@@ -1,0 +1,158 @@
+:root {
+  --main-green: #6db33f;
+  --accent-green: #9ccc65;
+  --light-green: #c5e1a5;
+  --off-white: #ffffff;
+  --dark-gray: #333;
+}
+
+body {
+  background-color: var(--off-white);
+  color: var(--dark-gray);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  font-size: 20px;
+}
+
+.nav {
+  font-size: 22px;
+  background-color: #6db33f;
+  overflow: hidden;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background-color: #111;
+}
+
+a {
+  color: var(--off-white);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin: 20px auto;
+  max-width: 1000px;
+  width: 80vw;
+  min-width: 400px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0 0 10px 0;
+}
+
+#author {
+  color: var(--dark-gray);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+#description {
+  margin-top: 0;
+}
+
+ul#time-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul#time-list li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+ul#time-list li:last-child {
+  margin-right: 0;
+}
+
+#ingredients-section, #directions-section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+
+#ingredients-section ul {
+  list-style-type: disc;
+  margin: 0;
+  margin-left:20px;
+  padding: 0;
+}
+
+ul li, ol li {
+  margin-bottom: 5px;
+}
+
+#directions-section li{
+  margin-bottom: 5px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--light-green);
+  margin: 20px 0;
+}
+
+#tags li {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#delete-section {
+  margin-top: 20px;
+}
+
+#delete-section a {
+  background-color: var(--accent-green);
+  color: var(--off-white);
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  width: 30vw;
+  min-width:300px;
+  max-width:600px;
+  height: 70px;
+  text-align: center;;
+}
+#delete-section a p{
+  font-size: 25px;
+  font-weight: bold;
+  display: block;
+}
+
+#delete-section a:hover {
+  background-color: var(--main-green);
+}

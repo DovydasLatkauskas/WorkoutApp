@@ -1,0 +1,106 @@
+:root {
+    --main-green: #6db33f;
+    --accent-green: #9ccc65;
+    --light-green: #c5e1a5;
+    --off-white: #ffffff;
+    --dark-gray: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: var(--dark-gray);
+    background-color: var(--off-white);
+    margin:0;
+}
+
+.nav {
+    font-size: 22px;
+    background-color: #6db33f;
+    overflow: hidden;
+  }
+  
+.nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+  }
+  
+.nav li {
+    display: inline-block;
+  }
+  
+.nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+.nav a:hover {
+    background-color: #111;
+  }
+
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 4em;
+    color: var(--main-green);
+}
+
+blockquote {
+    display: block;
+    font-size: 1.2em;
+    font-style: italic;
+    color: var(--dark-gray);
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--light-green);
+    border: 5px solid var(--accent-green);
+    max-width: 1000px;
+}
+
+#recipes-list {
+    list-style: none;
+    margin-left:100px;
+    margin-right:135px;
+    margin-top: 50px;
+}
+
+.recipe-item a {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    background-color: var(--light-green);
+    margin: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 1000px;
+}
+
+.recipe-item a:hover {
+    background-color: var(--accent-green);
+    color: var(--off-white);
+}
+
+#about-project {
+    font-size: 1.2em;
+    color: var(--dark-gray);
+    margin: 40px auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+#about-project a {
+    color: var(--main-green);
+    text-decoration: none;
+    font-weight: bold;
+}
