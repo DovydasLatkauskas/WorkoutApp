@@ -1,0 +1,130 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  /*background-color: cornsilk;*/
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  margin: 0;
+  padding: 0;
+  /*cursor: url("./img/img.png"), auto;*/
+
+}
+.workOutPreset{
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  backdrop-filter: opacity(20%);
+}
+
+h2{
+  color: beige;
+  text-align: center;
+  font-size: 36px;
+}
+
+#dynamic-text-outer{
+  position: fixed;
+  left: 1300px;
+  text-align: right;
+  font-size: 24px;
+  color: beige;
+}
+
+#dynamic-text-inner{
+  text-align: right;
+  font-size: 24px;
+  color: beige;
+  /*text-decoration: underline;*/
+  /*background-color: rgb(100, 100, 100);*/
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #222222;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(70, 70, 70);
+  border-radius: 5px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+#cursorBox{
+  position: absolute;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: translateX(-45%) translateY(-58%) ;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.8;
+  mix-blend-mode: difference;
+  border: 2px solid white;
+  /*box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);*/
+}
+
+.workOuts{
+  background-color: #cccccc ;
+  opacity: 20%;
+  margin: 3%;
+  position: relative;
+  top: 10%;
+  left: 2%;
+  height: 20%;
+  width: 90%;
+  border-radius: 40px;
+  transition: opacity 1s ease;
+}
+
+#taskBar {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #222222;
+  padding: 26px 10px;
+  margin: 0;
+}
+
+#HomeLink{
+  background-color: cadetblue;
+}
+
+#taskBar a{
+  text-align: center;
+  font-size: 24px;
+  color: beige;
+  padding: 26px 10px;
+  text-decoration: none;
+}
+
+#taskBar img{
+  height: 80px;
+  width: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#taskBar a:hover{
+  text-align: center;
+  color: #222222;
+  background-color: wheat;
+}
+
+
