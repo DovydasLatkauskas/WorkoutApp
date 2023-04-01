@@ -1,6 +1,6 @@
 package com.David.SpringRecipes.models;
 
-public class Excercise {
+public class Exercise {
     private String name;
     private String targetMuscles;
     private String equipment;
