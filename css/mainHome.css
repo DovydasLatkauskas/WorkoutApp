@@ -274,6 +274,13 @@ h2{
   width: 0;
 }
 
+#workOutBeta{
+  background-image: url("https://www.inspireusafoundation.org/wp-content/uploads/2022/10/quadricep-muscles-1024x980.png");
+}
+#workOutGamma{
+  background-image: url("https://www.inspireusafoundation.org/wp-content/uploads/2022/10/back-musculature-1024x1013.png")
+}
+
 /* Create a custom checkbox */
 .checkmarkA {
   position: absolute;
@@ -284,6 +291,10 @@ h2{
   background-color: #eee;
   opacity: 0;
   transition: opacity 1s ease;
+}
+
+#workOutDelta{
+  background-image: url("https://images.twinkl.co.uk/tr/image/upload/t_illustration/illustation/antagonistic-muscles-labelled.png");
 }
 
 /* On mouse-over, add a grey background color */

@@ -1,41 +1,25 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial=1.0">
+  <title>Log in</title>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
-
 <body>
-
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/s8hWQwFwayo?&t=0scontrols=0&autoplay=1&mute=1&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>&lt;!&ndash;<video autoplay muted loop id="myVideo">&ndash;&gt;-->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s8hWQwFwayo?controls=0&autoplay=1&mute=1&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!--  <source src="https://www.youtube.com/watch?v=dCjt9eptadI" type="video/mp4">-->
+<!--</video>-->
+<div id="input-information">
+  <form id="login-box">
+    <label for="email">Enter E-mail: </label>
+    <input class="input-box" id="email" type="email" required autocomplete="off"/><br><br>
+    <label for="password">Enter Password: </label>
+    <input class="input-box" id="password" type="password" required autocomplete="off"><br><br>
+    <button id="submit"><b>LOG IN</b></button>
+  </form>
+</div>
+<script src="./js/CursorPlay.js"></script>
 </body>
-
 </html>

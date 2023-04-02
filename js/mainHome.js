@@ -8,6 +8,25 @@ let degChange = 120;
 let isHovering = false;
 let inputBox = document.getElementById("inputBox");
 let closeButton = document.getElementById("close")
+let radios = document.getElementsByName("radio");
+submitButton.addEventListener("click", function test() {
+  for(let radio of radios) {
+    if(radio.checked && radio.id === "Biceps"){
+      window.open('WorkoutsDetailed.html', '_blank');
+    } else if(radio.checked && radio.id === "Upper Back"){
+      window.open('WorkoutsDetailed1.html', '_blank');
+    }
+  }
+})
+function test() {
+  for(let radio of radios) {
+    if(radio.checked && radio.id === "Biceps"){
+      window.open('WorkoutsDetailed.html', '_blank');
+    } else if(radio.checked && radio.id === "Upper Back"){
+      window.open('WorkoutsDetailed1.html', '_blank');
+    }
+  }
+}
 // let repsCount = document.getElementsByClassName("containerA")
 
 for( let workout of workOuts ){

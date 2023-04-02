@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", function(){
   let submitButton = document.getElementById("submit");
   let degChange = 120;
   let isHovering = false;
+  let submit = document.getElementById("submit");
+  submit.addEventListener("click", function(){
+    window.open('HomePage.' +
+      'html');
+  })
 
   const buttonAnimation = () => {
     if (isHovering) {

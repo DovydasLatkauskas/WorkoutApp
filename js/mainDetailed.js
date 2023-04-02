@@ -1,3 +1,9 @@
+
+let listSelected = [];
+function addToList(heading){
+  listSelected.push(heading);
+}
+
 document.addEventListener("DOMContentLoaded", function(){
   let rand = document.getElementById("dynamic-text-inner");
   let workOuts = document.getElementsByClassName("workOuts");
@@ -5,10 +11,13 @@ document.addEventListener("DOMContentLoaded", function(){
   let alpha = [2, 7, 12, 17]
   let index = 0;
   let wordInd = 0;
+  let listSelected = [];
 
   for(let i = 0; i < alpha.length; i++) {
     workOuts[i].style.left = alpha[i]*window.innerWidth/100 + "px";
   }
+
+
 
   document.addEventListener("scroll", function(){
     for(let i = 0; i < alpha.length; i++){
@@ -80,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   }
   printLetters(attributes[wordInd])
-
 // let repsCount = document.getElementsByClassName("containerA")
 
   for( let workout of workOuts ){
@@ -96,9 +104,6 @@ document.addEventListener("DOMContentLoaded", function(){
         box[0].style.opacity = "1"
       }
       let button = workout.getElementsByTagName("button");
-      button.addEventListener("click", function (){
-
-      })
       //cursorStyling
       // cursorDiv.style.height = "60px";
       // cursorDiv.style.width = "60px";
